@@ -1,0 +1,280 @@
+/*color palette: https://coolors.co/palette/03071e-370617-6a040f-9d0208-d00000-dc2f02-e85d04-f48c06-faa307-ffba08 */
+
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri', Arial, sans-serif;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav{
+    width: 100vw;
+    height: 15vh;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.nav.open{
+    background-color: black;
+    transition: background-color 0.5s ease;
+}
+
+.nav.open div ul li a{
+    color: white;
+}
+
+.nav div{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav div ul{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav div ul li{
+    color: black;
+    width: 33%;
+    text-align: center;
+    font-size: 1.5em;
+    transform: translateY(0);
+    transition: transform 0.2s ease-out;
+}
+
+.nav div ul li a{
+    color: #6A040F;
+}
+
+.nav div ul li:hover{
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-out;
+}
+
+#menuBut{
+    display: none;
+    font-size: 2em;
+}
+
+.menu{
+    z-index: 2;
+    position: fixed;
+    right: 0;
+    width: 0%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: width .7s ease;
+    background-image: linear-gradient(to bottom right, #DC2F02, #FAA307);
+}
+
+.menu ul{
+    width: 80%;
+}
+
+.menu ul li{
+    text-align: center;
+    font-size: 2em;
+}
+
+.menu ul li a{
+    color: white;
+}
+
+.menuLines{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuLines hr{
+    height: 0.5px;
+    background-color: white;
+    width: 100%;
+}
+
+.menuLines p{
+    color: white;
+}
+
+.menu.menuOpen{
+    width: 100vw;
+    transition: width .7s ease;
+}
+
+
+/*Section One*/
+
+.secOne{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(Pics/seconebg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secOneInCont{
+    height: 40%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.secOneInCont div{
+    height: 100%;
+    width: 50%;
+}
+
+.secOneInCont div fieldset{
+    border: none;
+    height: 100%;
+    width: 100%;
+    font-size: 2em;
+    margin-bottom: 20%;
+}
+
+.secOneInCont div fieldset legend{
+    color: white; background-image: linear-gradient(to bottom right, #ff2020, #ff5050); padding: 10px; border-radius: 10px;
+}
+
+.secOneInCont nav{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secOneInCont nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secOneInCont nav ul li a svg{
+    color: #9d0208;
+    transition: width .5s ease, height .5s ease, stroke-width .5s ease;
+}
+
+.secOneInCont nav ul li{
+    animation-name: medicalLogosSecOne;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+.secOneInCont nav ul li:hover{
+    animation-play-state: paused;
+}
+
+.secOneInCont nav ul li:hover a svg{
+    width: 6em;
+    height: 6em;
+    transition: width .5s ease, height .5s ease, stroke-width .5s ease;
+    stroke: #FF5E5E;
+    stroke-width: 10px;
+}
+
+.secOneInCont nav ul li p{
+    text-align: center;
+    color: white;
+    background-color: #FF5E5E;
+    padding: 3px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform .5s ease, opacity .5s ease;
+}
+
+.secOneInCont nav ul li:hover p{
+    opacity: 1;
+    transform: translateY(-10px);
+    font-size: 1.2em;
+    transition: transform .5s ease, opacity .5s ease;
+
+}
+
+/*mobile vers of SecOne*/
+
+@media (max-width: 1228px){
+    .secOneInCont nav{
+        display: none;
+    }
+
+    .secOneInCont div{
+        width: 100%;
+        text-align: center
+    }
+
+    .secOneInCont div fieldset{
+        margin: 0;
+        padding: 0;
+    }
+
+    #menuBut{
+        display: block;
+    }
+
+    .nav div ul{
+        display: none;
+    }
+}
+
+
+/*animations*/
+
+@keyframes medicalLogosSecOne{
+    0% {transform: translateY(20px);}
+    50% {transform: translateY(-20px);}
+    100% {transform: translateY(20px);}
+}
+
+@keyframes appear{
+    0%{transform: translateX(-10vw); opacity: 0;}
+    100%{transform: translateX(0); opacity: 1;}
+}
